@@ -408,7 +408,7 @@ class Gill4Block(nn.Module):
         k3 = self.conv6(func.relu(self.bn6(self.conv5(func.relu(self.bn5(0.2071 * k1 + 0.29289 * k2 + shortcut))))))
         outx += 0.569 * k3
         out = self.conv8(func.relu(self.bn8(self.conv7(func.relu(self.bn7(1.7071 * k3 - 0.7071 * k2 + shortcut))))))
-        outx = 1 / 6. * out
+        outx += 1 / 6. * out
         out = outx + shortcut
         out = func.relu(out)
 
